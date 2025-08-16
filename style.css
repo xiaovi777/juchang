@@ -1,0 +1,110 @@
+/* ========================================================== */
+/* ================= 【通用及云端库样式】 ================== */
+/* ========================================================== */
+
+/* --- 通用遮罩层样式 --- */
+#story_library_modal_overlay, #story_upload_modal_overlay, #story_local_library_modal_overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); backdrop-filter: blur(4px);
+    display: flex; justify-content: center; align-items: flex-start; 
+    padding-top: 5vh; box-sizing: border-box;
+}
+#story_library_modal_overlay { z-index: 9990; }
+#story_upload_modal_overlay, #story_local_library_modal_overlay { z-index: 9995; }
+
+/* --- 云端库主窗口 --- */
+#story_library_modal_content {
+    width: 90%; height: 85vh; max-width: 1200px;
+    background-color: var(--panel-bg, #333337); color: var(--primary-text, #e0e0e0);
+    border-radius: 12px; box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+    display: flex; flex-direction: column; padding: 20px; position: relative;
+    border: 1px solid var(--border-color, #444); box-sizing: border-box;
+}
+#story_library_close_btn { position: absolute; top: 10px; right: 15px; background: none; border: none; font-size: 28px; color: var(--secondary-text, #b0b0b0); cursor: pointer; line-height: 1; }
+#story_library_close_btn:hover { color: var(--primary-text, #e0e0e0); }
+.library-header { margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; padding-bottom: 15px; border-bottom: 1px solid var(--border-color, #444); flex-wrap: wrap; }
+.library-header h2 { margin: 0; }
+#story_search_input { padding: 8px 12px; border-radius: 20px; border: 1px solid var(--border-color, #444); background-color: var(--bg-color, #2a2a2e); color: var(--primary-text, #e0e0e0); width: 300px; }
+.library-body { flex-grow: 1; display: flex; gap: 20px; overflow: hidden; }
+.library-sidebar { width: 200px; flex-shrink: 0; display: flex; flex-direction: column; overflow-y: auto; }
+.library-tag-btn { width: 100%; padding: 8px; margin-bottom: 5px; background-color: var(--button-bg, #4a4a50); border: 1px solid transparent; color: var(--primary-text, #e0e0e0); cursor: pointer; border-radius: 5px; text-align: left; }
+.library-tag-btn:hover, .library-tag-btn.active { background-color: var(--accent-color, #5a9cf8); border-color: var(--accent-color, #5a9cf8); }
+.library-main { flex-grow: 1; display: flex; gap: 20px; overflow: hidden; }
+.story-list-panel, .story-content-panel { display: flex; flex-direction: column; height: 100%; background-color: var(--bg-color, #2a2a2e); border-radius: 8px; padding: 15px; }
+.story-list-panel { width: 300px; flex-shrink: 0; }
+.story-content-panel { flex-grow: 1; }
+#library_story_list_container { flex-grow: 1; overflow-y: auto; }
+.library-story-item { padding: 10px; cursor: pointer; border-radius: 5px; margin-bottom: 5px; }
+.library-story-item:hover { background-color: var(--button-bg, #4a4a50); }
+.library-story-item.active { background-color: var(--accent-color, #5a9cf8); color: white; }
+#library_story_meta { font-size: 0.9em; color: var(--secondary-text, #b0b0b0); margin-bottom: 15px; }
+#library_story_content { flex-grow: 1; overflow-y: auto; white-space: pre-wrap; background-color: var(--panel-bg, #333337); padding: 10px; border-radius: 5px; line-height: 1.6; }
+#library_actions { margin-top: 15px; padding-top: 15px; border-top: 1px solid var(--border-color, #444); display: none; }
+
+/* --- 云端上传窗口 --- */
+#story_upload_modal_content {
+    background-color: var(--panel-bg, #333337); color: var(--primary-text, #e0e0e0);
+    padding: 25px; border-radius: 10px; width: 500px; max-width: 90%; position: relative; 
+    border: 1px solid var(--border-color, #444); box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5); box-sizing: border-box;
+}
+#story_upload_close_btn { position: absolute; top: 10px; right: 15px; background: none; border: none; font-size: 24px; color: var(--secondary-text, #b0b0b0); cursor: pointer; }
+#story_upload_modal_content h3 { margin-top: 0; }
+.form-group { margin-bottom: 15px; }
+.form-group label { display: block; margin-bottom: 5px; }
+.form-group input, .form-group textarea { width: 100%; padding: 8px; border-radius: 5px; background-color: var(--bg-color, #2a2a2e); color: var(--primary-text, #e0e0e0); border: 1px solid var(--border-color, #444); box-sizing: border-box; }
+.form-actions { text-align: right; margin-top: 20px; }
+#upload_status { margin-top: 15px; font-size: 0.9em; }
+
+
+/* ========================================================== */
+/* ============= 【新增 - 本地剧场库样式】 ================== */
+/* ========================================================== */
+
+#story_local_library_modal_content {
+    background-color: var(--panel-bg, #333337); color: var(--primary-text, #e0e0e0);
+    padding: 20px; border-radius: 10px; width: 90%; max-width: 800px; position: relative;
+    border: 1px solid var(--border-color, #444); box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+    display: flex; flex-direction: column; max-height: 85vh;
+}
+#story_local_library_close_btn { position: absolute; top: 10px; right: 15px; background: none; border: none; font-size: 24px; color: var(--secondary-text, #b0b0b0); cursor: pointer; }
+.worldbook-binding-area { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; flex-wrap: wrap; }
+.worldbook-binding-area select { flex-grow: 1; padding: 8px; }
+.local-stories-area, .new-local-story-area { display: flex; flex-direction: column; }
+.local-stories-area { flex-grow: 1; overflow-y: hidden; }
+#local_story_list_container { flex-grow: 1; overflow-y: auto; padding-right: 10px; }
+.local-story-item { border: 1px solid var(--border-color, #444); border-radius: 8px; margin-bottom: 10px; }
+.local-story-header { background-color: var(--button-bg, #4a4a50); padding: 10px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+.local-story-header:hover { background-color: var(--accent-color, #5a9cf8); }
+.local-story-content { display: none; padding: 15px; white-space: pre-wrap; line-height: 1.6; border-top: 1px solid var(--border-color, #444); }
+.local-story-content-text { max-height: 200px; overflow-y: auto; }
+.local-story-actions { margin-top: 10px; text-align: right; }
+.new-local-story-area { margin-top: 15px; flex-shrink: 0; }
+#new_local_story_content { width: 100%; box-sizing: border-box; }
+.new-story-actions { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; }
+#new_local_story_id_display { font-style: italic; color: var(--secondary-text, #b0b0b0); }
+
+
+/* ========================================================== */
+/* ============== 【通用移动端适配】 =============== */
+/* ========================================================== */
+
+@media (max-width: 768px) {
+    #story_library_modal_overlay, #story_upload_modal_overlay, #story_local_library_modal_overlay { padding-top: 2.5vh; }
+    #story_library_modal_content { width: 95vw; height: 90vh; padding: 10px; }
+    .library-header { flex-direction: column; align-items: flex-start; }
+    #story_search_input { width: 100%; box-sizing: border-box; margin-top: 10px; }
+    #open_upload_modal_btn, #open_local_library_btn { margin: 10px 0 0 0 !important; width: 100%; }
+    .library-body, .library-main { flex-direction: column; }
+    .library-sidebar { width: 100%; height: auto; flex-direction: row; overflow-x: auto; padding-bottom: 10px; border-bottom: 1px solid var(--border-color, #444); }
+    .library-sidebar h3 { display: none; }
+    .library-tag-btn { flex-shrink: 0; width: auto; margin-right: 8px; }
+    .library-main { height: 100%; }
+    .story-list-panel, .story-content-panel { width: 100%; box-sizing: border-box; }
+    .story-list-panel { height: 40%; flex-shrink: 0; }
+    .story-content-panel { height: 60%; }
+    #library_send_btn { width: 100%; }
+    
+    .form-actions { text-align: center; }
+    #submit_upload_btn { width: 100%; }
+    #story_local_library_modal_content { width: 95vw; }
+}

@@ -1,0 +1,37 @@
+<div id="story_local_library_modal_overlay">
+    <div id="story_local_library_modal_content">
+        <button id="story_local_library_close_btn" title="关闭">×</button>
+        <h3>本地剧场库 (世界书)</h3>
+
+        <!-- 绑定世界书 -->
+        <div class="worldbook-binding-area">
+            <label for="worldbook_selector">选择世界书:</label>
+            <select id="worldbook_selector">
+                <option value="">加载中...</option>
+            </select>
+            <button id="bind_worldbook_btn" class="menu_button">绑定</button>
+        </div>
+
+        <hr>
+
+        <!-- 本地剧本列表 -->
+        <div class="local-stories-area">
+            <h4>剧本列表 (来自条目: "小剧场库")</h4>
+            <div id="local_story_list_container">
+                <p>请先绑定一个包含“小剧场库”条目的世界书。</p>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- 新增剧本 -->
+        <div class="new-local-story-area">
+            <h4>新增本地剧本</h4>
+            <textarea id="new_local_story_content" rows="6" placeholder="在此处输入新的小剧场内容..."></textarea>
+            <div class="new-story-actions">
+                <span id="new_local_story_id_display"></span>
+                <button id="save_and_send_local_story_btn" class="menu_button">保存并发送</button>
+            </div>
+        </div>
+    </div>
+</div>
